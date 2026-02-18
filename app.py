@@ -9,7 +9,7 @@ st.write("〜新クトゥルフ神話TRPG「悪霊の家」プレイアブル環
 
 
 if "GEMINI_API_KEY" in st.secrets:
-    api_key = st.secrets["AIzaSyBzI2kb151ogn_qQzCu3ul5gQkK04EQT4c"]
+    api_key = st.secrets["KUMAZAIDAN"]
 else:
     api_key = st.sidebar.text_input("Gemini API Keyを入力してください", type="password")
 
