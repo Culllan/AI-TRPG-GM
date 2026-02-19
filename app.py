@@ -5,14 +5,12 @@ import google.generativeai as genai
 st.set_page_config(page_title="AI-GM プロトタイプ", page_icon="🎲", layout="centered")
 st.title("🎲 AI-GM プロトタイプ")
 st.write("〜新クトゥルフ神話TRPG「悪霊の家」プレイアブル環境〜")
+
 # クラウド上の秘密の鍵（Secrets）があればそれを使い、無ければ入力欄を出す
-
-
 if "GEMINI_API_KEY" in st.secrets:
-    api_key = "AIzaSyBzI2kb151ogn_qQzCu3ul5gQkK04EQT4c"
+    api_key = st.secrets["KUMAZAIDAN"]
 else:
-    api_key = "AIzaSyBzI2kb151ogn_qQzCu3ul5gQkK04EQT4c"
-
+    api_key = st.sidebar.text_input("Gemini API Keyを入力してください", type="password")
 
 if api_key:
     genai.configure(api_key=api_key)
